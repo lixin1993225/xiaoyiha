@@ -40,7 +40,7 @@
       },
       methods:{
       	statusChange:function(res){
-      		console.log(res)
+      		console.log(this.$store.state.indexNum)
       	}
       }
     }
