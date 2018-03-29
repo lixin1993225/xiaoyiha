@@ -18,7 +18,7 @@ export default new Router({
     {
       path: '/xiao',
       name: 'xiao',
-      component: Center,
+      component: Xiao,
       children:[
 
       ]
@@ -42,7 +42,7 @@ export default new Router({
     {
       path: '/center',
       name: 'center',
-      component: Xiao,
+      component: Center,
       children:[
 
       ]

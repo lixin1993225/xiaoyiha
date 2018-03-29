@@ -39,3 +39,10 @@ a{
 .rightpadding{
 	padding-right:0;
 }
+.overflowhidden{
+	display:block;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: hidden
+
+}
