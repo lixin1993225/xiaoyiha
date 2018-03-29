@@ -24,12 +24,15 @@
 	import centernC from '../assets/images/center_nc.png';
     export default {
       name: 'bottomTab',
+      created(){
+      	this.tabcheck();//监听tab在哪里
+      },
       data(){
       		return {
       			tablist:[
       				{tab:'趣事',link:'/xiao',indexNum:'xiao',imgSrcck:xiaoC,imgSrcnck:xiaonC},
       				{tab:'趣闻',link:'/new',indexNum:'new',imgSrcck:newC,imgSrcnck:newnC},
-      				{tab:'趣图',link:'/girl',indexNum:'gril',imgSrcck:girlC,imgSrcnck:girlnC},
+      				{tab:'趣图',link:'/girl',indexNum:'girl',imgSrcck:girlC,imgSrcnck:girlnC},
       				{tab:'趣我',link:'/center',indexNum:'center',imgSrcck:centerC,imgSrcnck:centernC}
       			],
       			filter:'xiao'
@@ -38,7 +41,10 @@
       methods:{
       	statusChange:function(res){
       		//console.log(this.$store.state.indexNum)
-      		this.filter = res
+      		this.filter = this.$route.path.split('/')[1]
+      	},
+      	tabcheck(){
+      		this.filter = this.$route.path.split('/')[1]
       	}
       }
     }
