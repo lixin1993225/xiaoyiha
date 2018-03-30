@@ -26,7 +26,7 @@ npm run e2e
 # run all tests
 npm test
 #本项目采用webpack+vue开发得一个单页面应用。
-项目的主色调为这两种c2cfcc 00b38a
+项目的主色调为这两种 c2cfcc 00b38a
 src为项目的开发目录：
 	assets：存储静态文件
 	components：为项目中得各个模块

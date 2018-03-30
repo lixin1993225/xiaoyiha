@@ -16,12 +16,12 @@
 	import xiaoC from '../assets/images/xiaocry_c.png';
 	import newC from '../assets/images/new_c.png';
 	import girlC from '../assets/images/girl_c.png';
-	import centerC from '../assets/images/center_c.png';
+	import centerC from '../assets/images/video_c.png';
 
 	import xiaonC from '../assets/images/xiaocry_nc.png';
 	import newnC from '../assets/images/new_nc.png';
 	import girlnC from '../assets/images/girl_nc.png';
-	import centernC from '../assets/images/center_nc.png';
+	import centernC from '../assets/images/video_nc.png';
     export default {
       name: 'bottomTab',
       created(){

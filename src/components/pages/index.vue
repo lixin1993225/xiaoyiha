@@ -2,7 +2,7 @@
 	<div class="smile">
 		<div class="content">
 			<ul>
-				<li class="topli animated pulse" v-for="item in allDatas" :key="item.headerName">
+				<li class="topli animated bounceInDown" v-for="item in allDatas" :key="item.headerName">
 					<HeaderInf :item=item />
 					<article class="articles">{{item.group.content}}</article>
 					<WeTodos :item=item />

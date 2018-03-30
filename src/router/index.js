@@ -4,6 +4,8 @@ import Xiao from '@/components/pages/index'
 import New from '@/components/pages/new'
 import Girl from '@/components/pages/girl'
 import Center from '@/components/pages/center'
+import Player from '@/components/pages/secondpage/videoplaer'
+import Shipin from '@/components/pages/centerindex'
 
 Vue.use(Router)
 
@@ -44,7 +46,21 @@ export default new Router({
       name: 'center',
       component: Center,
       children:[
-
+        // {
+        //   path: '/',
+        //   name: 'videos',
+        //   component: Videos
+        // },
+        // {
+        //   path: 'videos',
+        //   name: 'videos',
+        //   component: Videos
+        // },
+        {
+          path: '/',
+          name: 'player',
+          component: Player
+        }
       ]
     }
   ]
