@@ -10,24 +10,25 @@
 </template>
 <script>
 	export default{
-		name:'videos',
+		name:'shipin',
 		created(){
 			this.request()
 		},
 		data(){
 			return {
-				videos:[]
+				videos:[],
+				pageNum:0,
 			}
 		},
 		methods:{
 			request(){
 				this.$ajax({
 					method:'get',
-					url:'Video_Recom/0-10.do?callback=getVideoList'
+					url:'recommend/Video_Comic/'+this.pageNum+'-10.do?callback=getVideoList'
 				}).then(function(res){
-					var val = JSON.parse(res.data.substring(13).slice(0,-1));
-					this.videos = val.Video_Recom
-					console.log(JSON.parse(res.data.substring(13).slice(0,-1)))
+					//console.log(res)
+					var val = JSON.parse(res.data.substring(13).slice(0,-1))
+					this.videos = val.Video_Comic
 				}.bind(this))
 			}
 		}

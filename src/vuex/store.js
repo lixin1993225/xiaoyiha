@@ -10,6 +10,6 @@ const store = new Vuex.Store({
 		clickNum(state,msg){
 			state.indexNum = msg
 		}
-	}
+	},
 })
 export default store

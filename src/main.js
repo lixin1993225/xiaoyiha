@@ -16,7 +16,6 @@ Vue.prototype.$goroute = function(path){//路由跳转
 }
 Vue.prototype.$ajax = axios
 Vue.prototype.$jsonp = jsonp
-
 Vue.use(Vuex)
 /* eslint-disable no-new */
 new Vue({

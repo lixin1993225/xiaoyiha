@@ -2,10 +2,10 @@
 	<div class="smile">
 		<div class="content">
 			<ul>
-				<li class="topli animated bounceInDown" v-for="item in allDatas" :key="item.headerName">
-					<HeaderInf :item=item />
-					<article class="articles">{{item.group.content}}</article>
-					<WeTodos :item=item />
+				<li class="topli animated bounceInDown" v-for="item in allDatas" :key="">
+					<!-- <HeaderInf :item=item /> -->
+					<article class="articles">{{item.digest}}</article>
+					<!-- <WeTodos :item=item /> -->
 				</li>
 			</ul>
 		</div>
@@ -19,29 +19,51 @@
 	export default{
 		name:'xiao',
 		created(){
-			this.request();
+			if(!JSON.parse(sessionStorage.getItem('index'))){
+				this.request(this.pageNum);
+			}else{
+				this.allDatas = JSON.parse(sessionStorage.getItem('index'))
+			}
 		},
 		data(){
 			return {
-				allDatas:[]
+				allDatas:[],
+				pageNum:0,
+				scrollFalg:true
 			}
 		},
 		methods:{
-			request(){
+			request(page){
 				this.$ajax({
 					method:'get',
-					url:'/pic?is_json=1&app_name=neihanshequ_web&max_time='+(new Date()).getTime()+'&csrfmiddlewaretoken=4508864a83bcea6013f10cd0046d7e9e'
+					url:'joke/chanListNews/T1419316284722/2/'+page+'-10.html?callback=joke'+this.pageNum
 				}).then(function(res){
-					this.allDatas = res.data.data.data
+					var val = JSON.parse(res.data.substring(6).slice(0,-1))
+					this.allDatas = this.allDatas.concat(val['段子'])
+					sessionStorage.setItem('index',JSON.stringify(this.allDatas))
+					this.scrollFalg = true
+					console.log(123)
 				}.bind(this)).catch(function(res){
 					console.log(res)
-				})
+					this.scrollFalg = false
+				})					
 			}
 		},
-		components:{
-			WeTodos,
-			HeaderInf
+		mounted(){
+			window.addEventListener('scroll',function(){
+				if(document.body.scrollTop+document.body.offsetHeight>=document.body.scrollHeight){
+					console.log(this.scrollFalg)
+					if(this.scrollFalg){
+						this.scrollFalg=false;
+						this.request(this.pageNum+10)
+					}
+				}
+			}.bind(this))
 		}
+		// components:{
+		// 	WeTodos,
+		// 	HeaderInf
+		// }
 	}
 </script>
 <style lang="stylus" scoped>
@@ -61,6 +83,7 @@
 			background #FDFDFD;
 			border 1px solid #f0f0f0;
 			padding 0.12rem
+			box-shadow 0 0.01rem 0.01rem #e3e3e3
 			.articles
 				font-size 0.18rem
 				color #333

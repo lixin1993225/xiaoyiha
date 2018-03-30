@@ -28,7 +28,7 @@
 				}).then(function(res){
 					var val = JSON.parse(res.data.substring(17).slice(0,-1))
 					this.imgInf = val
-					console.log(this.imgInf )
+					//console.log(this.imgInf )
 				}.bind(this)).catch(function(res){
 					console.log(res)
 				})

@@ -46,18 +46,18 @@ export default new Router({
       name: 'center',
       component: Center,
       children:[
-        // {
-        //   path: '/',
-        //   name: 'videos',
-        //   component: Videos
-        // },
-        // {
-        //   path: 'videos',
-        //   name: 'videos',
-        //   component: Videos
-        // },
         {
           path: '/',
+          name: 'shipin',
+          component: Shipin
+        },
+        // {
+        //   path: 'shipin',
+        //   name: 'shipin',
+        //   component: Shipin
+        // },
+        {
+          path: 'player',
           name: 'player',
           component: Player
         }

@@ -44,7 +44,7 @@
       		this.filter = this.$route.path.split('/')[1]
       	},
       	tabcheck(){
-      		this.filter = this.$route.path.split('/')[1]
+      		this.filter = this.$route.path.split('/')[1]||'xiao'
       	}
       }
     }
