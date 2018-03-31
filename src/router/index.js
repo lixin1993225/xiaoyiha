@@ -15,12 +15,14 @@ export default new Router({
     {
       path: '/',
       name: 'xiao',
-      component: Xiao
+      component: Xiao,
+      meta:{keepAlive:true}
     },
     {
       path: '/xiao',
       name: 'xiao',
       component: Xiao,
+      meta:{keepAlive:true},
       children:[
 
       ]
@@ -29,6 +31,7 @@ export default new Router({
       path: '/new',
       name: 'new',
       component: New,
+      meta:{keepAlive:true},
       children:[
 
       ]
@@ -37,6 +40,7 @@ export default new Router({
       path: '/girl',
       name: 'girl',
       component: Girl,
+      meta:{keepAlive:true},
       children:[
 
       ]
@@ -45,6 +49,7 @@ export default new Router({
       path: '/center',
       name: 'center',
       component: Center,
+      meta:{keepAlive:true},
       children:[
         {
           path: '/',

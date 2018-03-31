@@ -1,7 +1,7 @@
 <template>
 	<div class="girl smile">
 		<ul class="imgs">
-			<li class="animated swing" v-for="item in imgInf" :key="item.setid">
+			<li class="animated fadeIn" v-for="item in imgInf" :key="item.setid">
 				<img :src="item.cover">
 				<p>{{item.setname}}</p>
 			</li>

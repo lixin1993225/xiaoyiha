@@ -2,7 +2,7 @@
 	<div class="smile">
 		<div class="content">
 			<ul>
-				<li class="topli animated bounceInDown" v-for="item in allDatas" :key="">
+				<li class="topli animated fadeIn" v-for="item in allDatas" :key="">
 					<!-- <HeaderInf :item=item /> -->
 					<article class="articles">{{item.digest}}</article>
 					<!-- <WeTodos :item=item /> -->
@@ -20,7 +20,8 @@
 		name:'xiao',
 		created(){
 			if(!JSON.parse(sessionStorage.getItem('index'))){
-				this.request(this.pageNum);
+				console.log('chushihuajiazai')
+				this.request();
 			}else{
 				this.allDatas = JSON.parse(sessionStorage.getItem('index'))
 			}
@@ -33,32 +34,31 @@
 			}
 		},
 		methods:{
-			request(page){
+			request(){
 				this.$ajax({
 					method:'get',
-					url:'joke/chanListNews/T1419316284722/2/'+page+'-10.html?callback=joke'+this.pageNum
+					url:'joke/chanListNews/T1419316284722/2/'+this.pageNum+'-10.html?callback=joke'+this.pageNum/10
 				}).then(function(res){
 					var val = JSON.parse(res.data.substring(6).slice(0,-1))
 					this.allDatas = this.allDatas.concat(val['段子'])
 					sessionStorage.setItem('index',JSON.stringify(this.allDatas))
-					this.scrollFalg = true
-					console.log(123)
+					this.scrollFalg = true;
 				}.bind(this)).catch(function(res){
 					console.log(res)
-					this.scrollFalg = false
 				})					
 			}
 		},
 		mounted(){
-			window.addEventListener('scroll',function(){
-				if(document.body.scrollTop+document.body.offsetHeight>=document.body.scrollHeight){
-					console.log(this.scrollFalg)
-					if(this.scrollFalg){
-						this.scrollFalg=false;
-						this.request(this.pageNum+10)
+			console.log('第二次进来')
+				addEventListener('scroll',function(){
+					if(document.body.scrollTop+document.body.offsetHeight>=document.body.scrollHeight){
+						if(this.scrollFalg){
+							this.scrollFalg=false;
+							this.pageNum+=10;
+							this.request()
+						}
 					}
-				}
-			}.bind(this))
+				}.bind(this))				
 		}
 		// components:{
 		// 	WeTodos,

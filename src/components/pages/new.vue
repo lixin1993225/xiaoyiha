@@ -1,7 +1,7 @@
 <template>
 	<div class="new smile">
 		<ul class="content">
-			<li class="topli animated bounceInUp" v-for="item in items" v-bind:key="item.docid">
+			<li class="topli animated fadeIn" v-for="item in items" v-bind:key="item.docid">
 				<div class="articles">
 					<p class="imgtit overflowhidden2">{{item.digest}}</p>
 					<img v-if="item.imgsrc!=''" :src="item.imgsrc" alt="item.docid">
