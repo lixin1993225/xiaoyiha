@@ -34,7 +34,7 @@ src为项目的开发目录：
 		index.js：为路由配置文件
 	App.vue：为项目的入口文件
 	main.js:如入口js文件
-	lalal
+	lixin
 ```
 
 
