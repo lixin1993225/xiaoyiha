@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Xiao from '@/components/pages/index'
 import New from '@/components/pages/new'
+import NewIndex from '@/components/pages/newindex'
 import Girl from '@/components/pages/girl'
 import Center from '@/components/pages/center'
 import Player from '@/components/pages/secondpage/videoplaer'
@@ -33,7 +34,11 @@ export default new Router({
       component: New,
       meta:{keepAlive:true},
       children:[
-
+        {
+          path:'/',
+          name:'newindex',
+          component:NewIndex
+        }
       ]
     },
     {
@@ -56,11 +61,6 @@ export default new Router({
           name: 'shipin',
           component: Shipin
         },
-        // {
-        //   path: 'shipin',
-        //   name: 'shipin',
-        //   component: Shipin
-        // },
         {
           path: 'player',
           name: 'player',
