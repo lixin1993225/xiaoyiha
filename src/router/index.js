@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Xiao from '@/components/pages/index'
 import New from '@/components/pages/new'
 import NewIndex from '@/components/pages/newindex'
+import NewDetail from '@/components/pages/secondpage/newdetails'
 import Girl from '@/components/pages/girl'
 import Center from '@/components/pages/center'
 import Player from '@/components/pages/secondpage/videoplaer'
@@ -38,6 +39,11 @@ export default new Router({
           path:'/',
           name:'newindex',
           component:NewIndex
+        },
+        {
+          path:'newdetail',
+          name:'newdetail',
+          component:NewDetail
         }
       ]
     },

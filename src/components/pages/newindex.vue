@@ -1,7 +1,7 @@
 <template>
 	<div class="new smile">
 		<ul class="content">
-			<li class="topli animated fadeIn" @click="newDetail" v-for="item in items" v-bind:key="item.docid">
+			<li class="topli animated fadeIn" @click="newDetail(item)" v-for="item in items" v-bind:key="item.docid">
 				<div class="articles">
 					<p class="imgtit overflowhidden2">{{item.digest}}</p>
 					<img v-if="item.imgsrc!=''" :src="item.imgsrc" alt="item.docid">
@@ -32,8 +32,13 @@
 					this.items = val.BD29LPUBwangning
 				}.bind(this))
 			},
-			newDetail(){
-				alert(1)
+			newDetail(event){
+				this.$store.commit('writeNews',{
+					img:event.imgsrc,
+					text:event.digest
+				})
+				console.log(event,this.$store.state)
+				this.$goroute('/new/newdetail?')
 			}
 		}
 	}
