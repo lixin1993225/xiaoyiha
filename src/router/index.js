@@ -30,7 +30,7 @@ export default new Router({
       meta:{keepAlive:true}
     },
     {
-      path: '/xiao',
+      path: 'xiao',
       name: 'xiao',
       component: Xiao,
       meta:{keepAlive:true},
@@ -39,7 +39,7 @@ export default new Router({
       ]
     },
     {
-      path: '/new',
+      path: 'new',
       name: 'new',
       component: New,
       meta:{keepAlive:true},
@@ -57,7 +57,7 @@ export default new Router({
       ]
     },
     {
-      path: '/girl',
+      path: 'girl',
       name: 'girl',
       component: Girl,
       meta:{keepAlive:true},
@@ -66,7 +66,7 @@ export default new Router({
       ]
     },
     {
-      path: '/center',
+      path: 'center',
       name: 'center',
       component: Center,
       meta:{keepAlive:true},

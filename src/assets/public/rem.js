@@ -10,13 +10,13 @@
       var clientWidth = docEl.clientWidth;
       //获取不同移动端设备上的宽度
       if (!clientWidth) return;
-      //320 是我们默认的手机屏幕 
+      //375 是我们默认的手机屏幕 iphone6
       //clientWidth 是我们页面打开时所得到的屏幕（可看见页面的真实宽度）宽度真实的宽度值
       //这两者相除得到一个放大或缩小的比例值
       //320 ip5 --> 20px
       //414 ip6s --> 25px;
       //width:2rem;
-      docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+      docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
       //设置根元素font-size
     };
     /*600px
