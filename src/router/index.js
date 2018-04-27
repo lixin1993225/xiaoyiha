@@ -1,13 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Xiao from '@/components/pages/index'
-import New from '@/components/pages/new'
-import NewIndex from '@/components/pages/newindex'
-import NewDetail from '@/components/pages/secondpage/newdetails'
-import Girl from '@/components/pages/girl'
-import Center from '@/components/pages/center'
-import Player from '@/components/pages/secondpage/videoplaer'
-import Shipin from '@/components/pages/centerindex'
+// import Xiao from '@/components/pages/index'
+// import New from '@/components/pages/new'
+// import NewIndex from '@/components/pages/newindex'
+// import NewDetail from '@/components/pages/secondpage/newdetails'
+// import Girl from '@/components/pages/girl'
+// import Center from '@/components/pages/center'
+// import Player from '@/components/pages/secondpage/videoplaer'
+// import Shipin from '@/components/pages/centerindex'
+//下边的写法为按需加载
+const Xiao = () =>import(/*webpackChunkName:'xiao'*/ '@/components/pages/index.vue')
+const New = () =>import(/*webpackChunkName:'new'*/ '@/components/pages/new.vue')
+const NewIndex = () =>import(/*webpackChunkName:'newindex'*/ '@/components/pages/newindex.vue')
+const NewDetail = () =>import(/*webpackChunkName:'newdetail'*/ '@/components/pages/secondpage/newdetails.vue')
+const Girl = () =>import(/*webpackChunkName:'girl'*/ '@/components/pages/girl.vue')
+const Center = () =>import(/*webpackChunkName:'genter'*/ '@/components/pages/center.vue')
+const Player = () =>import(/*webpackChunkName:'player'*/ '@/components/pages/secondpage/videoplaer.vue')
+const Shipin = () =>import(/*webpackChunkName:'shipin'*/ '@/components/pages/centerindex.vue')
 
 Vue.use(Router)
 
