@@ -40,10 +40,11 @@
       },
       methods:{
       	statusChange:function(res){
-      		//console.log(this.$store.state.indexNum)
+      		console.log(this.$route)
       		this.filter = this.$route.path.split('/')[1]
       	},
       	tabcheck(){
+          //console.log(this.$route)
       		this.filter = this.$route.path.split('/')[1]||'xiao'
       	}
       }

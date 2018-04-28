@@ -9,14 +9,23 @@ import Router from 'vue-router'
 // import Player from '@/components/pages/secondpage/videoplaer'
 // import Shipin from '@/components/pages/centerindex'
 //下边的写法为按需加载
-const Xiao = () =>import(/*webpackChunkName:'xiao'*/ '@/components/pages/index.vue')
-const New = () =>import(/*webpackChunkName:'new'*/ '@/components/pages/new.vue')
-const NewIndex = () =>import(/*webpackChunkName:'newindex'*/ '@/components/pages/newindex.vue')
-const NewDetail = () =>import(/*webpackChunkName:'newdetail'*/ '@/components/pages/secondpage/newdetails.vue')
-const Girl = () =>import(/*webpackChunkName:'girl'*/ '@/components/pages/girl.vue')
-const Center = () =>import(/*webpackChunkName:'genter'*/ '@/components/pages/center.vue')
-const Player = () =>import(/*webpackChunkName:'player'*/ '@/components/pages/secondpage/videoplaer.vue')
-const Shipin = () =>import(/*webpackChunkName:'shipin'*/ '@/components/pages/centerindex.vue')
+// const Xiao = () =>import(/*webpackChunkName:'xiao'*/ '@/components/pages/index.vue')
+// const New = () =>import(/*webpackChunkName:'new'*/ '@/components/pages/new.vue')
+// const NewIndex = () =>import(/*webpackChunkName:'newindex'*/ '@/components/pages/newindex.vue')
+// const NewDetail = () =>import(/*webpackChunkName:'newdetail'*/ '@/components/pages/secondpage/newdetails.vue')
+// const Girl = () =>import(/*webpackChunkName:'girl'*/ '@/components/pages/girl.vue')
+// const Center = () =>import(/*webpackChunkName:'genter'*/ '@/components/pages/center.vue')
+// const Player = () =>import(/*webpackChunkName:'player'*/ '@/components/pages/secondpage/videoplaer.vue')
+// const Shipin = () =>import(/*webpackChunkName:'shipin'*/ '@/components/pages/centerindex.vue')
+
+const Xiao = () =>import('@/components/pages/index.vue')
+const New = () =>import('@/components/pages/new.vue')
+const NewIndex = () =>import('@/components/pages/newindex.vue')
+const NewDetail = () =>import('@/components/pages/secondpage/newdetails.vue')
+const Girl = () =>import('@/components/pages/girl.vue')
+const Center = () =>import('@/components/pages/center.vue')
+const Player = () =>import('@/components/pages/secondpage/videoplaer.vue')
+const Shipin = () =>import('@/components/pages/centerindex.vue')
 
 Vue.use(Router)
 
@@ -25,13 +34,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'xiao',
+      //name: 'xiao',
       component: Xiao,
       meta:{keepAlive:true}
     },
     {
-      path: 'xiao',
-      name: 'xiao',
+      path: '/xiao',
+      //name: 'xiao',
       component: Xiao,
       meta:{keepAlive:true},
       children:[
@@ -39,26 +48,26 @@ export default new Router({
       ]
     },
     {
-      path: 'new',
-      name: 'new',
+      path: '/new',
+      //name: 'new',
       component: New,
       meta:{keepAlive:true},
       children:[
         {
           path:'/',
-          name:'newindex',
+          //name:'newindex',
           component:NewIndex
         },
         {
           path:'newdetail',
-          name:'newdetail',
+          //name:'newdetail',
           component:NewDetail
         }
       ]
     },
     {
-      path: 'girl',
-      name: 'girl',
+      path: '/girl',
+      //name: 'girl',
       component: Girl,
       meta:{keepAlive:true},
       children:[
@@ -66,19 +75,19 @@ export default new Router({
       ]
     },
     {
-      path: 'center',
-      name: 'center',
+      path: '/center',
+      //name: 'center',
       component: Center,
       meta:{keepAlive:true},
       children:[
         {
           path: '/',
-          name: 'shipin',
+          //name: 'shipin',
           component: Shipin
         },
         {
           path: 'player',
-          name: 'player',
+         // name: 'player',
           component: Player
         }
       ]
